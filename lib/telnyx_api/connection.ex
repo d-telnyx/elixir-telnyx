@@ -26,7 +26,7 @@ defmodule TelnyxAPI.Connection do
 
   Tesla.Env.client
   """
-  @spec new(String.t, String.t) :: Tesla.Env.client
+  @spec new(String.t) :: Tesla.Env.client
   def new(api_key) do
     Tesla.client([
       {Tesla.Middleware.BearerAuth, token: api_key}
