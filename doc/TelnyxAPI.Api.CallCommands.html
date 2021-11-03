@@ -1,0 +1,1643 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.25.5">
+    <meta name="project" content="telnyx_api v0.1.0">
+
+    <title>TelnyxAPI.Api.CallCommands — telnyx_api v0.1.0</title>
+    <link rel="stylesheet" href="dist/elixir-d1506dba1db7cdc5483e.css" />
+
+    <script src="dist/sidebar_items-e70b63a55a.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/app-7b632b26f13d5e0d20e1.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>
+
+      try {
+        if (localStorage.getItem('night-mode') === 'true') {
+          document.body.classList.add('night-mode');
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button" aria-label="Submit Search">
+      <span class="icon-search" aria-hidden="true" title="Submit search"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
+      <span class="icon-cross" aria-hidden="true" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="telnyx_api.html" class="sidebar-projectName">
+telnyx_api
+      </a>
+      <strong class="sidebar-projectVersion">
+        v0.1.0
+      </strong>
+    </div>
+
+      <a href="telnyx_api.html">
+        <img src="assets/logo.png" alt="telnyx_api" class="sidebar-projectImage">
+      </a>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+TelnyxAPI.Api.CallCommands <small class="app-vsn">(telnyx_api v0.1.0)</small>
+
+          <a href="https://github.com/d-telnyx/elixir-telnyx/blob/master/lib/telnyx_api/api/call_commands.ex#L5" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>API calls for all endpoints tagged <code class="inline">CallCommands</code>.</p>
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#call_answer/4">call_answer(connection, call_control_id, answer_request, opts \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Answer call
+Answer an incoming call. You must issue this command before executing subsequent commands on an incoming call.  <strong>Expected Webhooks:</strong>  - <code class="inline">call.answered</code> </p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#call_bridge/4">call_bridge(connection, call_control_id, bridge_request, opts \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Bridge calls
+Bridge two call control calls.  <strong>Expected Webhooks:</strong>  - <code class="inline">call.bridged</code> for Leg A - <code class="inline">call.bridged</code> for Leg B </p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#call_dial/3">call_dial(connection, call_request, opts \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Dial
+Dial a number or SIP URI from a given connection. A successful response will include a <code class="inline">call_leg_id</code> which can be used to correlate the command with subsequent webhooks.  <strong>Expected Webhooks:</strong>  - <code class="inline">call.initiated</code> - <code class="inline">call.answered</code> or <code class="inline">call.hangup</code> - <code class="inline">call.machine.detection.ended</code> if <code class="inline">answering_machine_detection</code> was requested - <code class="inline">call.machine.greeting.ended</code> if <code class="inline">answering_machine_detection</code> was set to <code class="inline">detect_beep</code>, <code class="inline">greeting_end</code> or <code class="inline">detect_words</code></p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#call_enqueue/4">call_enqueue(connection, call_control_id, enqueue_request, opts \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Enqueue call
+Put the call in a queue.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#call_fork_start/4">call_fork_start(connection, call_control_id, start_forking_request, opts \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Forking start
+Call forking allows you to stream the media from a call to a specific target in realtime.  This stream can be used to enable realtime audio analysis to support a  variety of use cases, including fraud detection, or the creation of AI-generated audio responses.  Requests must specify either the <code class="inline">target</code> attribute or the <code class="inline">rx</code> and <code class="inline">tx</code> attributes.  <strong>Expected Webhooks:</strong>  - <code class="inline">call.fork.started</code> - <code class="inline">call.fork.stopped</code>  <strong>Simple Telnyx RTP Encapsulation Protocol (STREP)</strong>  <em>Note: This header/encapsulation is not used when the <code class="inline">rx</code> and <code class="inline">tx</code> parameters have been specified; it only applies when media is forked using the <code class="inline">target</code> attribute.</em>  If the destination for forked media is specified using the &quot;target&quot; attribute, the RTP will be encapsulated in an extra Telnyx protocol, which adds a 24 byte header to the RTP payload in each packet. The STREP header includes the Call Control <code class="inline">call_leg_id</code> for stream identification, along with bits that represent the direction (inbound or outbound) of the media. This 24-byte header sits between the UDP header and the RTP header.  The STREP header makes it possible to fork RTP for multiple calls (or two RTP streams for the same call) to the same IP:port, where the streams can be demultiplexed by your application using the information in the header. Of course, it's still possible to ignore this header completely, for example, if sending forked media for different calls to different ports or IP addresses. In this case, simply strip 24 bytes (or use the second byte to find the header length) from the received UDP payload to get the RTP (RTP header and payload).  <code class="inline">STREP Specification 0 1 2 3 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ |1 1|Version|L|D| HeaderLen | reserved (2 bytes) | +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ | reserved (4 bytes, for UDP ports or anything else) | +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ | The call_leg_id | | from Call Control | | (128 bits / 16 bytes) | | (this is binary data) | +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ 11 Static bits 11, always set to 11 to easily distinguish forked media from RTP (10) and T.38 media (usually 00) and SIP (which begins with a capital letter, so begins with bits 01). This is a magic number. Version Four bits to indicate the version number of the protocol, starting at 0001. L One bit to represent the leg of the call (A or B). 0 represents the A (first) leg of the call. 1 represents the B (second) leg of the call. D One bit to represent the direction of this RTP stream. 0 represents media received by Telnyx. 1 represents media transmitted by Telnyx. HeaderLen (1 byte) The length of the header in bytes. Note that this value does not include the length of the payload. The total size of the RTP can be calculated by subtracting the HeaderLen from the UDP length (minus 8 for the UDP header). In version 1, this value will always be 24. Reserved (6 bytes) Reserved for future use and to make sure that the header is a multiple of 32 bits Call Leg ID A 128-bit identifier for the call leg. This is the call_leg_id from Call Control.</code> </p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#call_fork_stop/4">call_fork_stop(connection, call_control_id, stop_forking_request, opts \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Forking stop
+Stop forking a call.  <strong>Expected Webhooks:</strong>  - <code class="inline">call.fork.stopped</code> </p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#call_gather_stop/4">call_gather_stop(connection, call_control_id, stop_gather_request, opts \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gather stop
+Stop current gather.  <strong>Expected Webhooks:</strong>  - <code class="inline">call.gather.ended</code> </p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#call_gather_using_audio/4">call_gather_using_audio(connection, call_control_id, gather_using_audio_request, opts \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gather using audio
+Play an audio file on the call until the required DTMF signals are gathered to build interactive menus.  You can pass a list of valid digits along with an 'invalid_audio_url', which will be played back at the beginning of each prompt. Playback will be interrupted when a DTMF signal is received. The <a href="/docs/api/v2/call-control/Call-Commands#CallControlAnswer">Answer</a> command must be issued before the <code class="inline">gather_using_audio</code> command.  <strong>Expected Webhooks:</strong>  - <code class="inline">call.playback.started</code> - <code class="inline">call.playback.ended</code> - <code class="inline">call.dtmf.received</code> (you may receive many of these webhooks) - <code class="inline">call.gather.ended</code> </p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#call_gather_using_speak/4">call_gather_using_speak(connection, call_control_id, gather_using_speak_request, opts \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Gather using speak
+Convert text to speech and play it on the call until the required DTMF signals are gathered to build interactive menus.  You can pass a list of valid digits along with an 'invalid_payload', which will be played back at the beginning of each prompt. Speech will be interrupted when a DTMF signal is received. The <a href="/docs/api/v2/call-control/Call-Commands#CallControlAnswer">Answer</a> command must be issued before the <code class="inline">gather_using_speak</code> command.  <strong>Expected Webhooks:</strong>  - <code class="inline">call.dtmf.received</code> (you may receive many of these webhooks) - <code class="inline">call.gather.ended</code> </p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#call_hangup/4">call_hangup(connection, call_control_id, hangup_request, opts \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Hangup call
+Hang up the call.  <strong>Expected Webhooks:</strong>  - <code class="inline">call.hangup</code> - <code class="inline">call.recording.saved</code> </p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#call_playback_start/4">call_playback_start(connection, call_control_id, play_audio_url_request, opts \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Play audio URL
+Play an audio file on the call. If multiple play audio commands are issued consecutively, the audio files will be placed in a queue awaiting playback.  <em>Notes:</em>  - When <code class="inline">overlay</code> is enabled, <code class="inline">target_legs</code> is limited to <code class="inline">self</code>. - A customer cannot Play Audio with <code class="inline">overlay=true</code> unless there is a Play Audio with <code class="inline">overlay=false</code> actively playing.  <strong>Expected Webhooks:</strong>  - <code class="inline">call.playback.started</code> - <code class="inline">call.playback.ended</code> </p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#call_playback_stop/4">call_playback_stop(connection, call_control_id, playback_stop_request, opts \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Stop audio playback
+Stop audio being played on the call.  <strong>Expected Webhooks:</strong>  - <code class="inline">call.playback.ended</code> or <code class="inline">call.speak.ended</code> </p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#call_record_pause/4">call_record_pause(connection, call_control_id, pause_recording_request, opts \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Record pause
+Pause recording the call. Recording can be resumed via Resume recording command.  <strong>Expected Webhooks:</strong>  There are no webhooks associated with this command. </p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#call_record_resume/4">call_record_resume(connection, call_control_id, resume_recording_request, opts \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Record resume
+Resume recording the call.  <strong>Expected Webhooks:</strong>  There are no webhooks associated with this command. </p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#call_record_start/4">call_record_start(connection, call_control_id, start_recording_request, opts \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Recording start
+Start recording the call. Recording will stop on call hang-up, or can be initiated via the Stop Recording command.  <strong>Expected Webhooks:</strong>  - <code class="inline">call.recording.saved</code> </p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#call_record_stop/4">call_record_stop(connection, call_control_id, stop_recording_request, opts \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Recording stop
+Stop recording the call.  <strong>Expected Webhooks:</strong>  - <code class="inline">call.recording.saved</code> </p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#call_refer/4">call_refer(connection, call_control_id, refer_request, opts \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>SIP Refer a call
+Initiate a SIP Refer on a Call Control call. You can initiate a SIP Refer at any point in the duration of a call.  <strong>Expected Webhooks:</strong>  - <code class="inline">call.refer.started</code> - <code class="inline">call.refer.completed</code> - <code class="inline">call.refer.failed</code> </p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#call_reject/4">call_reject(connection, call_control_id, reject_request, opts \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Reject a call
+Reject an incoming call.  <strong>Expected Webhooks:</strong>  - <code class="inline">call.hangup</code> </p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#call_send_dtmf/4">call_send_dtmf(connection, call_control_id, send_dtmf_request, opts \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Send DTMF
+Sends DTMF tones from this leg. DTMF tones will be heard by the other end of the call.  <strong>Expected Webhooks:</strong>  There are no webhooks associated with this command. </p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#call_speak/4">call_speak(connection, call_control_id, speak_request, opts \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Speak text
+Convert text to speech and play it back on the call. If multiple speak text commands are issued consecutively, the audio files will be placed in a queue awaiting playback.  <strong>Expected Webhooks:</strong>  - <code class="inline">call.speak.started</code> - <code class="inline">call.speak.ended</code> </p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#call_transcription_start/4">call_transcription_start(connection, call_control_id, transcription_start_request, opts \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Transcription start
+Start real-time transcription. Transcription will stop on call hang-up, or can be initiated via the Transcription stop command.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#call_transcription_stop/4">call_transcription_stop(connection, call_control_id, transcription_stop_request, opts \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Transcription stop
+Stop real-time transcription.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#call_transfer/4">call_transfer(connection, call_control_id, transfer_call_request, opts \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Transfer call
+Transfer a call to a new destination. If the transfer is unsuccessful, a <code class="inline">call.hangup</code> webhook for the other call (Leg B) will be sent indicating that the transfer could not be completed. The original call will remain active and may be issued additional commands, potentially transfering the call to an alternate destination.  <strong>Expected Webhooks:</strong>  - <code class="inline">call.initiated</code> - <code class="inline">call.bridged</code> to Leg B - <code class="inline">call.answered</code> or <code class="inline">call.hangup</code> - <code class="inline">call.machine.detection.ended</code> if <code class="inline">answering_machine_detection</code> was requested - <code class="inline">call.machine.greeting.ended</code> if <code class="inline">answering_machine_detection</code> was set to <code class="inline">detect_beep</code>, <code class="inline">greeting_end</code> or <code class="inline">detect_words</code></p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#client_state_update/4">client_state_update(connection, call_control_id, client_state_update_request, opts \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Update client state
+Updates client state</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#leave_queue/4">leave_queue(connection, call_control_id, leave_queue_request, opts \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Remove call from a queue
+Removes the call from a queue.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="call_answer/4">
+
+    <span id="call_answer/3"></span>
+
+  <div class="detail-header">
+    <a href="#call_answer/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">call_answer(connection, call_control_id, answer_request, opts \\ [])</h1>
+
+      <a href="https://github.com/d-telnyx/elixir-telnyx/blob/master/lib/telnyx_api/api/call_commands.ex#L30" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>call_answer(
+  Tesla.Env.client(),
+  String.t(),
+  <a href="TelnyxAPI.Model.AnswerRequest.html#t:t/0">TelnyxAPI.Model.AnswerRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.CallControlCommandResponse.html#t:t/0">TelnyxAPI.Model.CallControlCommandResponse.t</a>()}
+  | {:error, Tesla.Env.t()}</pre>
+
+      </div>
+
+<p>Answer call
+Answer an incoming call. You must issue this command before executing subsequent commands on an incoming call.  <strong>Expected Webhooks:</strong>  - <code class="inline">call.answered</code> </p><h2 id="call_answer/4-parameters" class="section-heading">
+  <a href="#call_answer/4-parameters" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>call_control_id (String.t): Unique identifier and token for controlling the call</li><li>answer_request (AnswerRequest): Answer call request</li><li>opts (KeywordList): [optional] Optional parameters<h2 id="call_answer/4-returns" class="section-heading">
+  <a href="#call_answer/4-returns" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Returns
+</h2>
+</li></ul><p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="call_bridge/4">
+
+    <span id="call_bridge/3"></span>
+
+  <div class="detail-header">
+    <a href="#call_bridge/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">call_bridge(connection, call_control_id, bridge_request, opts \\ [])</h1>
+
+      <a href="https://github.com/d-telnyx/elixir-telnyx/blob/master/lib/telnyx_api/api/call_commands.ex#L59" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>call_bridge(
+  Tesla.Env.client(),
+  String.t(),
+  <a href="TelnyxAPI.Model.BridgeRequest.html#t:t/0">TelnyxAPI.Model.BridgeRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.CallControlCommandResponse.html#t:t/0">TelnyxAPI.Model.CallControlCommandResponse.t</a>()}
+  | {:error, Tesla.Env.t()}</pre>
+
+      </div>
+
+<p>Bridge calls
+Bridge two call control calls.  <strong>Expected Webhooks:</strong>  - <code class="inline">call.bridged</code> for Leg A - <code class="inline">call.bridged</code> for Leg B </p><h2 id="call_bridge/4-parameters" class="section-heading">
+  <a href="#call_bridge/4-parameters" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>call_control_id (String.t): Unique identifier and token for controlling the call</li><li>bridge_request (BridgeRequest): Bridge call request</li><li>opts (KeywordList): [optional] Optional parameters<h2 id="call_bridge/4-returns" class="section-heading">
+  <a href="#call_bridge/4-returns" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Returns
+</h2>
+</li></ul><p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="call_dial/3">
+
+    <span id="call_dial/2"></span>
+
+  <div class="detail-header">
+    <a href="#call_dial/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">call_dial(connection, call_request, opts \\ [])</h1>
+
+      <a href="https://github.com/d-telnyx/elixir-telnyx/blob/master/lib/telnyx_api/api/call_commands.ex#L87" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>call_dial(Tesla.Env.client(), <a href="TelnyxAPI.Model.CallRequest.html#t:t/0">TelnyxAPI.Model.CallRequest.t</a>(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.RetrieveCallStatusResponse.html#t:t/0">TelnyxAPI.Model.RetrieveCallStatusResponse.t</a>()}
+  | {:error, Tesla.Env.t()}</pre>
+
+      </div>
+
+<p>Dial
+Dial a number or SIP URI from a given connection. A successful response will include a <code class="inline">call_leg_id</code> which can be used to correlate the command with subsequent webhooks.  <strong>Expected Webhooks:</strong>  - <code class="inline">call.initiated</code> - <code class="inline">call.answered</code> or <code class="inline">call.hangup</code> - <code class="inline">call.machine.detection.ended</code> if <code class="inline">answering_machine_detection</code> was requested - <code class="inline">call.machine.greeting.ended</code> if <code class="inline">answering_machine_detection</code> was set to <code class="inline">detect_beep</code>, <code class="inline">greeting_end</code> or <code class="inline">detect_words</code></p><h2 id="call_dial/3-parameters" class="section-heading">
+  <a href="#call_dial/3-parameters" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>call_request (CallRequest): Call request</li><li>opts (KeywordList): [optional] Optional parameters<h2 id="call_dial/3-returns" class="section-heading">
+  <a href="#call_dial/3-returns" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Returns
+</h2>
+</li></ul><p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="call_enqueue/4">
+
+    <span id="call_enqueue/3"></span>
+
+  <div class="detail-header">
+    <a href="#call_enqueue/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">call_enqueue(connection, call_control_id, enqueue_request, opts \\ [])</h1>
+
+      <a href="https://github.com/d-telnyx/elixir-telnyx/blob/master/lib/telnyx_api/api/call_commands.ex#L116" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>call_enqueue(
+  Tesla.Env.client(),
+  String.t(),
+  <a href="TelnyxAPI.Model.EnqueueRequest.html#t:t/0">TelnyxAPI.Model.EnqueueRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.CallControlCommandResponse.html#t:t/0">TelnyxAPI.Model.CallControlCommandResponse.t</a>()}
+  | {:error, Tesla.Env.t()}</pre>
+
+      </div>
+
+<p>Enqueue call
+Put the call in a queue.</p><h2 id="call_enqueue/4-parameters" class="section-heading">
+  <a href="#call_enqueue/4-parameters" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>call_control_id (String.t): Unique identifier and token for controlling the call</li><li>enqueue_request (EnqueueRequest): Enqueue call request</li><li>opts (KeywordList): [optional] Optional parameters<h2 id="call_enqueue/4-returns" class="section-heading">
+  <a href="#call_enqueue/4-returns" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Returns
+</h2>
+</li></ul><p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="call_fork_start/4">
+
+    <span id="call_fork_start/3"></span>
+
+  <div class="detail-header">
+    <a href="#call_fork_start/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">call_fork_start(connection, call_control_id, start_forking_request, opts \\ [])</h1>
+
+      <a href="https://github.com/d-telnyx/elixir-telnyx/blob/master/lib/telnyx_api/api/call_commands.ex#L145" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>call_fork_start(
+  Tesla.Env.client(),
+  String.t(),
+  <a href="TelnyxAPI.Model.StartForkingRequest.html#t:t/0">TelnyxAPI.Model.StartForkingRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.CallControlCommandResponse.html#t:t/0">TelnyxAPI.Model.CallControlCommandResponse.t</a>()}
+  | {:error, Tesla.Env.t()}</pre>
+
+      </div>
+
+<p>Forking start
+Call forking allows you to stream the media from a call to a specific target in realtime.  This stream can be used to enable realtime audio analysis to support a  variety of use cases, including fraud detection, or the creation of AI-generated audio responses.  Requests must specify either the <code class="inline">target</code> attribute or the <code class="inline">rx</code> and <code class="inline">tx</code> attributes.  <strong>Expected Webhooks:</strong>  - <code class="inline">call.fork.started</code> - <code class="inline">call.fork.stopped</code>  <strong>Simple Telnyx RTP Encapsulation Protocol (STREP)</strong>  <em>Note: This header/encapsulation is not used when the <code class="inline">rx</code> and <code class="inline">tx</code> parameters have been specified; it only applies when media is forked using the <code class="inline">target</code> attribute.</em>  If the destination for forked media is specified using the &quot;target&quot; attribute, the RTP will be encapsulated in an extra Telnyx protocol, which adds a 24 byte header to the RTP payload in each packet. The STREP header includes the Call Control <code class="inline">call_leg_id</code> for stream identification, along with bits that represent the direction (inbound or outbound) of the media. This 24-byte header sits between the UDP header and the RTP header.  The STREP header makes it possible to fork RTP for multiple calls (or two RTP streams for the same call) to the same IP:port, where the streams can be demultiplexed by your application using the information in the header. Of course, it's still possible to ignore this header completely, for example, if sending forked media for different calls to different ports or IP addresses. In this case, simply strip 24 bytes (or use the second byte to find the header length) from the received UDP payload to get the RTP (RTP header and payload).  <code class="inline">STREP Specification 0 1 2 3 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ |1 1|Version|L|D| HeaderLen | reserved (2 bytes) | +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ | reserved (4 bytes, for UDP ports or anything else) | +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ | The call_leg_id | | from Call Control | | (128 bits / 16 bytes) | | (this is binary data) | +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+ 11 Static bits 11, always set to 11 to easily distinguish forked media from RTP (10) and T.38 media (usually 00) and SIP (which begins with a capital letter, so begins with bits 01). This is a magic number. Version Four bits to indicate the version number of the protocol, starting at 0001. L One bit to represent the leg of the call (A or B). 0 represents the A (first) leg of the call. 1 represents the B (second) leg of the call. D One bit to represent the direction of this RTP stream. 0 represents media received by Telnyx. 1 represents media transmitted by Telnyx. HeaderLen (1 byte) The length of the header in bytes. Note that this value does not include the length of the payload. The total size of the RTP can be calculated by subtracting the HeaderLen from the UDP length (minus 8 for the UDP header). In version 1, this value will always be 24. Reserved (6 bytes) Reserved for future use and to make sure that the header is a multiple of 32 bits Call Leg ID A 128-bit identifier for the call leg. This is the call_leg_id from Call Control.</code> </p><h2 id="call_fork_start/4-parameters" class="section-heading">
+  <a href="#call_fork_start/4-parameters" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>call_control_id (String.t): Unique identifier and token for controlling the call</li><li>start_forking_request (StartForkingRequest): Fork media request</li><li>opts (KeywordList): [optional] Optional parameters<h2 id="call_fork_start/4-returns" class="section-heading">
+  <a href="#call_fork_start/4-returns" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Returns
+</h2>
+</li></ul><p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="call_fork_stop/4">
+
+    <span id="call_fork_stop/3"></span>
+
+  <div class="detail-header">
+    <a href="#call_fork_stop/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">call_fork_stop(connection, call_control_id, stop_forking_request, opts \\ [])</h1>
+
+      <a href="https://github.com/d-telnyx/elixir-telnyx/blob/master/lib/telnyx_api/api/call_commands.ex#L174" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>call_fork_stop(
+  Tesla.Env.client(),
+  String.t(),
+  <a href="TelnyxAPI.Model.StopForkingRequest.html#t:t/0">TelnyxAPI.Model.StopForkingRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.CallControlCommandResponse.html#t:t/0">TelnyxAPI.Model.CallControlCommandResponse.t</a>()}
+  | {:error, Tesla.Env.t()}</pre>
+
+      </div>
+
+<p>Forking stop
+Stop forking a call.  <strong>Expected Webhooks:</strong>  - <code class="inline">call.fork.stopped</code> </p><h2 id="call_fork_stop/4-parameters" class="section-heading">
+  <a href="#call_fork_stop/4-parameters" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>call_control_id (String.t): Unique identifier and token for controlling the call</li><li>stop_forking_request (StopForkingRequest): Stop forking media request</li><li>opts (KeywordList): [optional] Optional parameters<h2 id="call_fork_stop/4-returns" class="section-heading">
+  <a href="#call_fork_stop/4-returns" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Returns
+</h2>
+</li></ul><p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="call_gather_stop/4">
+
+    <span id="call_gather_stop/3"></span>
+
+  <div class="detail-header">
+    <a href="#call_gather_stop/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">call_gather_stop(connection, call_control_id, stop_gather_request, opts \\ [])</h1>
+
+      <a href="https://github.com/d-telnyx/elixir-telnyx/blob/master/lib/telnyx_api/api/call_commands.ex#L203" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>call_gather_stop(
+  Tesla.Env.client(),
+  String.t(),
+  <a href="TelnyxAPI.Model.StopGatherRequest.html#t:t/0">TelnyxAPI.Model.StopGatherRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.CallControlCommandResponse.html#t:t/0">TelnyxAPI.Model.CallControlCommandResponse.t</a>()}
+  | {:error, Tesla.Env.t()}</pre>
+
+      </div>
+
+<p>Gather stop
+Stop current gather.  <strong>Expected Webhooks:</strong>  - <code class="inline">call.gather.ended</code> </p><h2 id="call_gather_stop/4-parameters" class="section-heading">
+  <a href="#call_gather_stop/4-parameters" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>call_control_id (String.t): Unique identifier and token for controlling the call</li><li>stop_gather_request (StopGatherRequest): Stop current gather</li><li>opts (KeywordList): [optional] Optional parameters<h2 id="call_gather_stop/4-returns" class="section-heading">
+  <a href="#call_gather_stop/4-returns" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Returns
+</h2>
+</li></ul><p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="call_gather_using_audio/4">
+
+    <span id="call_gather_using_audio/3"></span>
+
+  <div class="detail-header">
+    <a href="#call_gather_using_audio/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">call_gather_using_audio(connection, call_control_id, gather_using_audio_request, opts \\ [])</h1>
+
+      <a href="https://github.com/d-telnyx/elixir-telnyx/blob/master/lib/telnyx_api/api/call_commands.ex#L232" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>call_gather_using_audio(
+  Tesla.Env.client(),
+  String.t(),
+  <a href="TelnyxAPI.Model.GatherUsingAudioRequest.html#t:t/0">TelnyxAPI.Model.GatherUsingAudioRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.CallControlCommandResponse.html#t:t/0">TelnyxAPI.Model.CallControlCommandResponse.t</a>()}
+  | {:error, Tesla.Env.t()}</pre>
+
+      </div>
+
+<p>Gather using audio
+Play an audio file on the call until the required DTMF signals are gathered to build interactive menus.  You can pass a list of valid digits along with an 'invalid_audio_url', which will be played back at the beginning of each prompt. Playback will be interrupted when a DTMF signal is received. The <a href="/docs/api/v2/call-control/Call-Commands#CallControlAnswer">Answer</a> command must be issued before the <code class="inline">gather_using_audio</code> command.  <strong>Expected Webhooks:</strong>  - <code class="inline">call.playback.started</code> - <code class="inline">call.playback.ended</code> - <code class="inline">call.dtmf.received</code> (you may receive many of these webhooks) - <code class="inline">call.gather.ended</code> </p><h2 id="call_gather_using_audio/4-parameters" class="section-heading">
+  <a href="#call_gather_using_audio/4-parameters" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>call_control_id (String.t): Unique identifier and token for controlling the call</li><li>gather_using_audio_request (GatherUsingAudioRequest): Gather using audio request</li><li>opts (KeywordList): [optional] Optional parameters<h2 id="call_gather_using_audio/4-returns" class="section-heading">
+  <a href="#call_gather_using_audio/4-returns" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Returns
+</h2>
+</li></ul><p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="call_gather_using_speak/4">
+
+    <span id="call_gather_using_speak/3"></span>
+
+  <div class="detail-header">
+    <a href="#call_gather_using_speak/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">call_gather_using_speak(connection, call_control_id, gather_using_speak_request, opts \\ [])</h1>
+
+      <a href="https://github.com/d-telnyx/elixir-telnyx/blob/master/lib/telnyx_api/api/call_commands.ex#L261" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>call_gather_using_speak(
+  Tesla.Env.client(),
+  String.t(),
+  <a href="TelnyxAPI.Model.GatherUsingSpeakRequest.html#t:t/0">TelnyxAPI.Model.GatherUsingSpeakRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.CallControlCommandResponse.html#t:t/0">TelnyxAPI.Model.CallControlCommandResponse.t</a>()}
+  | {:error, Tesla.Env.t()}</pre>
+
+      </div>
+
+<p>Gather using speak
+Convert text to speech and play it on the call until the required DTMF signals are gathered to build interactive menus.  You can pass a list of valid digits along with an 'invalid_payload', which will be played back at the beginning of each prompt. Speech will be interrupted when a DTMF signal is received. The <a href="/docs/api/v2/call-control/Call-Commands#CallControlAnswer">Answer</a> command must be issued before the <code class="inline">gather_using_speak</code> command.  <strong>Expected Webhooks:</strong>  - <code class="inline">call.dtmf.received</code> (you may receive many of these webhooks) - <code class="inline">call.gather.ended</code> </p><h2 id="call_gather_using_speak/4-parameters" class="section-heading">
+  <a href="#call_gather_using_speak/4-parameters" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>call_control_id (String.t): Unique identifier and token for controlling the call</li><li>gather_using_speak_request (GatherUsingSpeakRequest): Gather using speak request</li><li>opts (KeywordList): [optional] Optional parameters<h2 id="call_gather_using_speak/4-returns" class="section-heading">
+  <a href="#call_gather_using_speak/4-returns" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Returns
+</h2>
+</li></ul><p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="call_hangup/4">
+
+    <span id="call_hangup/3"></span>
+
+  <div class="detail-header">
+    <a href="#call_hangup/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">call_hangup(connection, call_control_id, hangup_request, opts \\ [])</h1>
+
+      <a href="https://github.com/d-telnyx/elixir-telnyx/blob/master/lib/telnyx_api/api/call_commands.ex#L290" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>call_hangup(
+  Tesla.Env.client(),
+  String.t(),
+  <a href="TelnyxAPI.Model.HangupRequest.html#t:t/0">TelnyxAPI.Model.HangupRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.CallControlCommandResponse.html#t:t/0">TelnyxAPI.Model.CallControlCommandResponse.t</a>()}
+  | {:error, Tesla.Env.t()}</pre>
+
+      </div>
+
+<p>Hangup call
+Hang up the call.  <strong>Expected Webhooks:</strong>  - <code class="inline">call.hangup</code> - <code class="inline">call.recording.saved</code> </p><h2 id="call_hangup/4-parameters" class="section-heading">
+  <a href="#call_hangup/4-parameters" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>call_control_id (String.t): Unique identifier and token for controlling the call</li><li>hangup_request (HangupRequest): Hangup request</li><li>opts (KeywordList): [optional] Optional parameters<h2 id="call_hangup/4-returns" class="section-heading">
+  <a href="#call_hangup/4-returns" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Returns
+</h2>
+</li></ul><p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="call_playback_start/4">
+
+    <span id="call_playback_start/3"></span>
+
+  <div class="detail-header">
+    <a href="#call_playback_start/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">call_playback_start(connection, call_control_id, play_audio_url_request, opts \\ [])</h1>
+
+      <a href="https://github.com/d-telnyx/elixir-telnyx/blob/master/lib/telnyx_api/api/call_commands.ex#L319" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>call_playback_start(
+  Tesla.Env.client(),
+  String.t(),
+  <a href="TelnyxAPI.Model.PlayAudioUrlRequest.html#t:t/0">TelnyxAPI.Model.PlayAudioUrlRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.CallControlCommandResponse.html#t:t/0">TelnyxAPI.Model.CallControlCommandResponse.t</a>()}
+  | {:error, Tesla.Env.t()}</pre>
+
+      </div>
+
+<p>Play audio URL
+Play an audio file on the call. If multiple play audio commands are issued consecutively, the audio files will be placed in a queue awaiting playback.  <em>Notes:</em>  - When <code class="inline">overlay</code> is enabled, <code class="inline">target_legs</code> is limited to <code class="inline">self</code>. - A customer cannot Play Audio with <code class="inline">overlay=true</code> unless there is a Play Audio with <code class="inline">overlay=false</code> actively playing.  <strong>Expected Webhooks:</strong>  - <code class="inline">call.playback.started</code> - <code class="inline">call.playback.ended</code> </p><h2 id="call_playback_start/4-parameters" class="section-heading">
+  <a href="#call_playback_start/4-parameters" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>call_control_id (String.t): Unique identifier and token for controlling the call</li><li>play_audio_url_request (PlayAudioUrlRequest): Play audio URL request</li><li>opts (KeywordList): [optional] Optional parameters<h2 id="call_playback_start/4-returns" class="section-heading">
+  <a href="#call_playback_start/4-returns" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Returns
+</h2>
+</li></ul><p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="call_playback_stop/4">
+
+    <span id="call_playback_stop/3"></span>
+
+  <div class="detail-header">
+    <a href="#call_playback_stop/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">call_playback_stop(connection, call_control_id, playback_stop_request, opts \\ [])</h1>
+
+      <a href="https://github.com/d-telnyx/elixir-telnyx/blob/master/lib/telnyx_api/api/call_commands.ex#L348" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>call_playback_stop(
+  Tesla.Env.client(),
+  String.t(),
+  <a href="TelnyxAPI.Model.PlaybackStopRequest.html#t:t/0">TelnyxAPI.Model.PlaybackStopRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.CallControlCommandResponse.html#t:t/0">TelnyxAPI.Model.CallControlCommandResponse.t</a>()}
+  | {:error, Tesla.Env.t()}</pre>
+
+      </div>
+
+<p>Stop audio playback
+Stop audio being played on the call.  <strong>Expected Webhooks:</strong>  - <code class="inline">call.playback.ended</code> or <code class="inline">call.speak.ended</code> </p><h2 id="call_playback_stop/4-parameters" class="section-heading">
+  <a href="#call_playback_stop/4-parameters" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>call_control_id (String.t): Unique identifier and token for controlling the call</li><li>playback_stop_request (PlaybackStopRequest): Stop audio playback request</li><li>opts (KeywordList): [optional] Optional parameters<h2 id="call_playback_stop/4-returns" class="section-heading">
+  <a href="#call_playback_stop/4-returns" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Returns
+</h2>
+</li></ul><p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="call_record_pause/4">
+
+    <span id="call_record_pause/3"></span>
+
+  <div class="detail-header">
+    <a href="#call_record_pause/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">call_record_pause(connection, call_control_id, pause_recording_request, opts \\ [])</h1>
+
+      <a href="https://github.com/d-telnyx/elixir-telnyx/blob/master/lib/telnyx_api/api/call_commands.ex#L377" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>call_record_pause(
+  Tesla.Env.client(),
+  String.t(),
+  <a href="TelnyxAPI.Model.PauseRecordingRequest.html#t:t/0">TelnyxAPI.Model.PauseRecordingRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.CallControlCommandResponse.html#t:t/0">TelnyxAPI.Model.CallControlCommandResponse.t</a>()}
+  | {:error, Tesla.Env.t()}</pre>
+
+      </div>
+
+<p>Record pause
+Pause recording the call. Recording can be resumed via Resume recording command.  <strong>Expected Webhooks:</strong>  There are no webhooks associated with this command. </p><h2 id="call_record_pause/4-parameters" class="section-heading">
+  <a href="#call_record_pause/4-parameters" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>call_control_id (String.t): Unique identifier and token for controlling the call</li><li>pause_recording_request (PauseRecordingRequest): Pause recording call request</li><li>opts (KeywordList): [optional] Optional parameters<h2 id="call_record_pause/4-returns" class="section-heading">
+  <a href="#call_record_pause/4-returns" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Returns
+</h2>
+</li></ul><p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="call_record_resume/4">
+
+    <span id="call_record_resume/3"></span>
+
+  <div class="detail-header">
+    <a href="#call_record_resume/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">call_record_resume(connection, call_control_id, resume_recording_request, opts \\ [])</h1>
+
+      <a href="https://github.com/d-telnyx/elixir-telnyx/blob/master/lib/telnyx_api/api/call_commands.ex#L406" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>call_record_resume(
+  Tesla.Env.client(),
+  String.t(),
+  <a href="TelnyxAPI.Model.ResumeRecordingRequest.html#t:t/0">TelnyxAPI.Model.ResumeRecordingRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.CallControlCommandResponse.html#t:t/0">TelnyxAPI.Model.CallControlCommandResponse.t</a>()}
+  | {:error, Tesla.Env.t()}</pre>
+
+      </div>
+
+<p>Record resume
+Resume recording the call.  <strong>Expected Webhooks:</strong>  There are no webhooks associated with this command. </p><h2 id="call_record_resume/4-parameters" class="section-heading">
+  <a href="#call_record_resume/4-parameters" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>call_control_id (String.t): Unique identifier and token for controlling the call</li><li>resume_recording_request (ResumeRecordingRequest): Resume recording call request</li><li>opts (KeywordList): [optional] Optional parameters<h2 id="call_record_resume/4-returns" class="section-heading">
+  <a href="#call_record_resume/4-returns" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Returns
+</h2>
+</li></ul><p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="call_record_start/4">
+
+    <span id="call_record_start/3"></span>
+
+  <div class="detail-header">
+    <a href="#call_record_start/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">call_record_start(connection, call_control_id, start_recording_request, opts \\ [])</h1>
+
+      <a href="https://github.com/d-telnyx/elixir-telnyx/blob/master/lib/telnyx_api/api/call_commands.ex#L435" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>call_record_start(
+  Tesla.Env.client(),
+  String.t(),
+  <a href="TelnyxAPI.Model.StartRecordingRequest.html#t:t/0">TelnyxAPI.Model.StartRecordingRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.CallControlCommandResponse.html#t:t/0">TelnyxAPI.Model.CallControlCommandResponse.t</a>()}
+  | {:error, Tesla.Env.t()}</pre>
+
+      </div>
+
+<p>Recording start
+Start recording the call. Recording will stop on call hang-up, or can be initiated via the Stop Recording command.  <strong>Expected Webhooks:</strong>  - <code class="inline">call.recording.saved</code> </p><h2 id="call_record_start/4-parameters" class="section-heading">
+  <a href="#call_record_start/4-parameters" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>call_control_id (String.t): Unique identifier and token for controlling the call</li><li>start_recording_request (StartRecordingRequest): Start recording audio request</li><li>opts (KeywordList): [optional] Optional parameters<h2 id="call_record_start/4-returns" class="section-heading">
+  <a href="#call_record_start/4-returns" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Returns
+</h2>
+</li></ul><p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="call_record_stop/4">
+
+    <span id="call_record_stop/3"></span>
+
+  <div class="detail-header">
+    <a href="#call_record_stop/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">call_record_stop(connection, call_control_id, stop_recording_request, opts \\ [])</h1>
+
+      <a href="https://github.com/d-telnyx/elixir-telnyx/blob/master/lib/telnyx_api/api/call_commands.ex#L464" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>call_record_stop(
+  Tesla.Env.client(),
+  String.t(),
+  <a href="TelnyxAPI.Model.StopRecordingRequest.html#t:t/0">TelnyxAPI.Model.StopRecordingRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.CallControlCommandResponse.html#t:t/0">TelnyxAPI.Model.CallControlCommandResponse.t</a>()}
+  | {:error, Tesla.Env.t()}</pre>
+
+      </div>
+
+<p>Recording stop
+Stop recording the call.  <strong>Expected Webhooks:</strong>  - <code class="inline">call.recording.saved</code> </p><h2 id="call_record_stop/4-parameters" class="section-heading">
+  <a href="#call_record_stop/4-parameters" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>call_control_id (String.t): Unique identifier and token for controlling the call</li><li>stop_recording_request (StopRecordingRequest): Stop recording call request</li><li>opts (KeywordList): [optional] Optional parameters<h2 id="call_record_stop/4-returns" class="section-heading">
+  <a href="#call_record_stop/4-returns" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Returns
+</h2>
+</li></ul><p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="call_refer/4">
+
+    <span id="call_refer/3"></span>
+
+  <div class="detail-header">
+    <a href="#call_refer/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">call_refer(connection, call_control_id, refer_request, opts \\ [])</h1>
+
+      <a href="https://github.com/d-telnyx/elixir-telnyx/blob/master/lib/telnyx_api/api/call_commands.ex#L493" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>call_refer(
+  Tesla.Env.client(),
+  String.t(),
+  <a href="TelnyxAPI.Model.ReferRequest.html#t:t/0">TelnyxAPI.Model.ReferRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.CallControlCommandResponse.html#t:t/0">TelnyxAPI.Model.CallControlCommandResponse.t</a>()}
+  | {:error, Tesla.Env.t()}</pre>
+
+      </div>
+
+<p>SIP Refer a call
+Initiate a SIP Refer on a Call Control call. You can initiate a SIP Refer at any point in the duration of a call.  <strong>Expected Webhooks:</strong>  - <code class="inline">call.refer.started</code> - <code class="inline">call.refer.completed</code> - <code class="inline">call.refer.failed</code> </p><h2 id="call_refer/4-parameters" class="section-heading">
+  <a href="#call_refer/4-parameters" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>call_control_id (String.t): Unique identifier and token for controlling the call</li><li>refer_request (ReferRequest): Refer request</li><li>opts (KeywordList): [optional] Optional parameters<h2 id="call_refer/4-returns" class="section-heading">
+  <a href="#call_refer/4-returns" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Returns
+</h2>
+</li></ul><p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="call_reject/4">
+
+    <span id="call_reject/3"></span>
+
+  <div class="detail-header">
+    <a href="#call_reject/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">call_reject(connection, call_control_id, reject_request, opts \\ [])</h1>
+
+      <a href="https://github.com/d-telnyx/elixir-telnyx/blob/master/lib/telnyx_api/api/call_commands.ex#L522" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>call_reject(
+  Tesla.Env.client(),
+  String.t(),
+  <a href="TelnyxAPI.Model.RejectRequest.html#t:t/0">TelnyxAPI.Model.RejectRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.CallControlCommandResponse.html#t:t/0">TelnyxAPI.Model.CallControlCommandResponse.t</a>()}
+  | {:error, Tesla.Env.t()}</pre>
+
+      </div>
+
+<p>Reject a call
+Reject an incoming call.  <strong>Expected Webhooks:</strong>  - <code class="inline">call.hangup</code> </p><h2 id="call_reject/4-parameters" class="section-heading">
+  <a href="#call_reject/4-parameters" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>call_control_id (String.t): Unique identifier and token for controlling the call</li><li>reject_request (RejectRequest): Reject request</li><li>opts (KeywordList): [optional] Optional parameters<h2 id="call_reject/4-returns" class="section-heading">
+  <a href="#call_reject/4-returns" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Returns
+</h2>
+</li></ul><p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="call_send_dtmf/4">
+
+    <span id="call_send_dtmf/3"></span>
+
+  <div class="detail-header">
+    <a href="#call_send_dtmf/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">call_send_dtmf(connection, call_control_id, send_dtmf_request, opts \\ [])</h1>
+
+      <a href="https://github.com/d-telnyx/elixir-telnyx/blob/master/lib/telnyx_api/api/call_commands.ex#L551" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>call_send_dtmf(
+  Tesla.Env.client(),
+  String.t(),
+  <a href="TelnyxAPI.Model.SendDtmfRequest.html#t:t/0">TelnyxAPI.Model.SendDtmfRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.CallControlCommandResponse.html#t:t/0">TelnyxAPI.Model.CallControlCommandResponse.t</a>()}
+  | {:error, Tesla.Env.t()}</pre>
+
+      </div>
+
+<p>Send DTMF
+Sends DTMF tones from this leg. DTMF tones will be heard by the other end of the call.  <strong>Expected Webhooks:</strong>  There are no webhooks associated with this command. </p><h2 id="call_send_dtmf/4-parameters" class="section-heading">
+  <a href="#call_send_dtmf/4-parameters" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>call_control_id (String.t): Unique identifier and token for controlling the call</li><li>send_dtmf_request (SendDtmfRequest): Send DTMF request</li><li>opts (KeywordList): [optional] Optional parameters<h2 id="call_send_dtmf/4-returns" class="section-heading">
+  <a href="#call_send_dtmf/4-returns" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Returns
+</h2>
+</li></ul><p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="call_speak/4">
+
+    <span id="call_speak/3"></span>
+
+  <div class="detail-header">
+    <a href="#call_speak/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">call_speak(connection, call_control_id, speak_request, opts \\ [])</h1>
+
+      <a href="https://github.com/d-telnyx/elixir-telnyx/blob/master/lib/telnyx_api/api/call_commands.ex#L580" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>call_speak(
+  Tesla.Env.client(),
+  String.t(),
+  <a href="TelnyxAPI.Model.SpeakRequest.html#t:t/0">TelnyxAPI.Model.SpeakRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.CallControlCommandResponse.html#t:t/0">TelnyxAPI.Model.CallControlCommandResponse.t</a>()}
+  | {:error, Tesla.Env.t()}</pre>
+
+      </div>
+
+<p>Speak text
+Convert text to speech and play it back on the call. If multiple speak text commands are issued consecutively, the audio files will be placed in a queue awaiting playback.  <strong>Expected Webhooks:</strong>  - <code class="inline">call.speak.started</code> - <code class="inline">call.speak.ended</code> </p><h2 id="call_speak/4-parameters" class="section-heading">
+  <a href="#call_speak/4-parameters" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>call_control_id (String.t): Unique identifier and token for controlling the call</li><li>speak_request (SpeakRequest): Speak request</li><li>opts (KeywordList): [optional] Optional parameters<h2 id="call_speak/4-returns" class="section-heading">
+  <a href="#call_speak/4-returns" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Returns
+</h2>
+</li></ul><p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="call_transcription_start/4">
+
+    <span id="call_transcription_start/3"></span>
+
+  <div class="detail-header">
+    <a href="#call_transcription_start/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">call_transcription_start(connection, call_control_id, transcription_start_request, opts \\ [])</h1>
+
+      <a href="https://github.com/d-telnyx/elixir-telnyx/blob/master/lib/telnyx_api/api/call_commands.ex#L609" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>call_transcription_start(
+  Tesla.Env.client(),
+  String.t(),
+  <a href="TelnyxAPI.Model.TranscriptionStartRequest.html#t:t/0">TelnyxAPI.Model.TranscriptionStartRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.CallControlCommandResponse.html#t:t/0">TelnyxAPI.Model.CallControlCommandResponse.t</a>()}
+  | {:error, Tesla.Env.t()}</pre>
+
+      </div>
+
+<p>Transcription start
+Start real-time transcription. Transcription will stop on call hang-up, or can be initiated via the Transcription stop command.</p><h2 id="call_transcription_start/4-parameters" class="section-heading">
+  <a href="#call_transcription_start/4-parameters" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>call_control_id (String.t): Unique identifier and token for controlling the call</li><li>transcription_start_request (TranscriptionStartRequest): Transcription start request</li><li>opts (KeywordList): [optional] Optional parameters<h2 id="call_transcription_start/4-returns" class="section-heading">
+  <a href="#call_transcription_start/4-returns" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Returns
+</h2>
+</li></ul><p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="call_transcription_stop/4">
+
+    <span id="call_transcription_stop/3"></span>
+
+  <div class="detail-header">
+    <a href="#call_transcription_stop/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">call_transcription_stop(connection, call_control_id, transcription_stop_request, opts \\ [])</h1>
+
+      <a href="https://github.com/d-telnyx/elixir-telnyx/blob/master/lib/telnyx_api/api/call_commands.ex#L638" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>call_transcription_stop(
+  Tesla.Env.client(),
+  String.t(),
+  <a href="TelnyxAPI.Model.TranscriptionStopRequest.html#t:t/0">TelnyxAPI.Model.TranscriptionStopRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.CallControlCommandResponse.html#t:t/0">TelnyxAPI.Model.CallControlCommandResponse.t</a>()}
+  | {:error, Tesla.Env.t()}</pre>
+
+      </div>
+
+<p>Transcription stop
+Stop real-time transcription.</p><h2 id="call_transcription_stop/4-parameters" class="section-heading">
+  <a href="#call_transcription_stop/4-parameters" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>call_control_id (String.t): Unique identifier and token for controlling the call</li><li>transcription_stop_request (TranscriptionStopRequest): Transcription stop request</li><li>opts (KeywordList): [optional] Optional parameters<h2 id="call_transcription_stop/4-returns" class="section-heading">
+  <a href="#call_transcription_stop/4-returns" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Returns
+</h2>
+</li></ul><p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="call_transfer/4">
+
+    <span id="call_transfer/3"></span>
+
+  <div class="detail-header">
+    <a href="#call_transfer/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">call_transfer(connection, call_control_id, transfer_call_request, opts \\ [])</h1>
+
+      <a href="https://github.com/d-telnyx/elixir-telnyx/blob/master/lib/telnyx_api/api/call_commands.ex#L667" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>call_transfer(
+  Tesla.Env.client(),
+  String.t(),
+  <a href="TelnyxAPI.Model.TransferCallRequest.html#t:t/0">TelnyxAPI.Model.TransferCallRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.CallControlCommandResponse.html#t:t/0">TelnyxAPI.Model.CallControlCommandResponse.t</a>()}
+  | {:error, Tesla.Env.t()}</pre>
+
+      </div>
+
+<p>Transfer call
+Transfer a call to a new destination. If the transfer is unsuccessful, a <code class="inline">call.hangup</code> webhook for the other call (Leg B) will be sent indicating that the transfer could not be completed. The original call will remain active and may be issued additional commands, potentially transfering the call to an alternate destination.  <strong>Expected Webhooks:</strong>  - <code class="inline">call.initiated</code> - <code class="inline">call.bridged</code> to Leg B - <code class="inline">call.answered</code> or <code class="inline">call.hangup</code> - <code class="inline">call.machine.detection.ended</code> if <code class="inline">answering_machine_detection</code> was requested - <code class="inline">call.machine.greeting.ended</code> if <code class="inline">answering_machine_detection</code> was set to <code class="inline">detect_beep</code>, <code class="inline">greeting_end</code> or <code class="inline">detect_words</code></p><h2 id="call_transfer/4-parameters" class="section-heading">
+  <a href="#call_transfer/4-parameters" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>call_control_id (String.t): Unique identifier and token for controlling the call</li><li>transfer_call_request (TransferCallRequest): Transfer call request</li><li>opts (KeywordList): [optional] Optional parameters<h2 id="call_transfer/4-returns" class="section-heading">
+  <a href="#call_transfer/4-returns" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Returns
+</h2>
+</li></ul><p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="client_state_update/4">
+
+    <span id="client_state_update/3"></span>
+
+  <div class="detail-header">
+    <a href="#client_state_update/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">client_state_update(connection, call_control_id, client_state_update_request, opts \\ [])</h1>
+
+      <a href="https://github.com/d-telnyx/elixir-telnyx/blob/master/lib/telnyx_api/api/call_commands.ex#L696" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>client_state_update(
+  Tesla.Env.client(),
+  String.t(),
+  <a href="TelnyxAPI.Model.ClientStateUpdateRequest.html#t:t/0">TelnyxAPI.Model.ClientStateUpdateRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.CallControlCommandResponse.html#t:t/0">TelnyxAPI.Model.CallControlCommandResponse.t</a>()}
+  | {:error, Tesla.Env.t()}</pre>
+
+      </div>
+
+<p>Update client state
+Updates client state</p><h2 id="client_state_update/4-parameters" class="section-heading">
+  <a href="#client_state_update/4-parameters" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>call_control_id (String.t): Unique identifier and token for controlling the call</li><li>client_state_update_request (ClientStateUpdateRequest): Updates client state for every subsequent webhook</li><li>opts (KeywordList): [optional] Optional parameters<h2 id="client_state_update/4-returns" class="section-heading">
+  <a href="#client_state_update/4-returns" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Returns
+</h2>
+</li></ul><p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="leave_queue/4">
+
+    <span id="leave_queue/3"></span>
+
+  <div class="detail-header">
+    <a href="#leave_queue/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">leave_queue(connection, call_control_id, leave_queue_request, opts \\ [])</h1>
+
+      <a href="https://github.com/d-telnyx/elixir-telnyx/blob/master/lib/telnyx_api/api/call_commands.ex#L725" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>leave_queue(
+  Tesla.Env.client(),
+  String.t(),
+  <a href="TelnyxAPI.Model.LeaveQueueRequest.html#t:t/0">TelnyxAPI.Model.LeaveQueueRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, <a href="TelnyxAPI.Model.Errors.html#t:t/0">TelnyxAPI.Model.Errors.t</a>()}
+  | {:ok, <a href="TelnyxAPI.Model.CallControlCommandResponse.html#t:t/0">TelnyxAPI.Model.CallControlCommandResponse.t</a>()}
+  | {:error, Tesla.Env.t()}</pre>
+
+      </div>
+
+<p>Remove call from a queue
+Removes the call from a queue.</p><h2 id="leave_queue/4-parameters" class="section-heading">
+  <a href="#leave_queue/4-parameters" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>call_control_id (String.t): Unique identifier and token for controlling the call</li><li>leave_queue_request (LeaveQueueRequest): Removes the call from the queue, the call currently is enqueued in.</li><li>opts (KeywordList): [optional] Optional parameters<h2 id="leave_queue/4-returns" class="section-heading">
+  <a href="#leave_queue/4-returns" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Returns
+</h2>
+</li></ul><p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.25.5) for the
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank">Elixir programming language</a>.
+          </span>
+          <span class="line">
+            Designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+
+            <a href="api-reference.html" title="API reference" class="line footer-button">API Reference</a>
+
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>

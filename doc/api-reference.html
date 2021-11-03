@@ -1,0 +1,1826 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.25.5">
+    <meta name="project" content="telnyx_api v0.1.0">
+
+    <title>API Reference — telnyx_api v0.1.0</title>
+    <link rel="stylesheet" href="dist/elixir-d1506dba1db7cdc5483e.css" />
+
+    <script src="dist/sidebar_items-e70b63a55a.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/app-7b632b26f13d5e0d20e1.js"></script>
+
+
+  </head>
+  <body data-type="extras">
+    <script>
+
+      try {
+        if (localStorage.getItem('night-mode') === 'true') {
+          document.body.classList.add('night-mode');
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button" aria-label="Submit Search">
+      <span class="icon-search" aria-hidden="true" title="Submit search"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
+      <span class="icon-cross" aria-hidden="true" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="telnyx_api.html" class="sidebar-projectName">
+telnyx_api
+      </a>
+      <strong class="sidebar-projectVersion">
+        v0.1.0
+      </strong>
+    </div>
+
+      <a href="telnyx_api.html">
+        <img src="assets/logo.png" alt="telnyx_api" class="sidebar-projectImage">
+      </a>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+<h1 id="content">
+API Reference <small class="app-vsn">telnyx_api v0.1.0</small>
+
+</h1>
+
+
+  <section class="details-list">
+    <h2 id="modules" class="section-heading">
+  <a href="#modules" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Modules
+</h2>
+
+    <div class="summary">
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Api.CallCommands.html">TelnyxAPI.Api.CallCommands</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>API calls for all endpoints tagged <code class="inline">CallCommands</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Api.CallControlApplications.html">TelnyxAPI.Api.CallControlApplications</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>API calls for all endpoints tagged <code class="inline">CallControlApplications</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Api.CallInformation.html">TelnyxAPI.Api.CallInformation</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>API calls for all endpoints tagged <code class="inline">CallInformation</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Api.ConferenceCommands.html">TelnyxAPI.Api.ConferenceCommands</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>API calls for all endpoints tagged <code class="inline">ConferenceCommands</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Api.Debugging.html">TelnyxAPI.Api.Debugging</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>API calls for all endpoints tagged <code class="inline">Debugging</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Api.QueueCommands.html">TelnyxAPI.Api.QueueCommands</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>API calls for all endpoints tagged <code class="inline">QueueCommands</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Api.RecordingsCommands.html">TelnyxAPI.Api.RecordingsCommands</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>API calls for all endpoints tagged <code class="inline">RecordingsCommands</code>.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Connection.html">TelnyxAPI.Connection</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Handle Tesla connections for TelnyxAPI.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Deserializer.html">TelnyxAPI.Deserializer</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Helper functions for deserializing responses into models</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.AnswerRequest.html">TelnyxAPI.Model.AnswerRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.BridgeRequest.html">TelnyxAPI.Model.BridgeRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.Call.html">TelnyxAPI.Model.Call</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallAnswered.html">TelnyxAPI.Model.CallAnswered</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallAnsweredEvent.html">TelnyxAPI.Model.CallAnsweredEvent</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallAnsweredPayload.html">TelnyxAPI.Model.CallAnsweredPayload</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallBridged.html">TelnyxAPI.Model.CallBridged</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallBridgedEvent.html">TelnyxAPI.Model.CallBridgedEvent</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallBridgedPayload.html">TelnyxAPI.Model.CallBridgedPayload</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallControlApplication.html">TelnyxAPI.Model.CallControlApplication</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallControlApplicationInbound.html">TelnyxAPI.Model.CallControlApplicationInbound</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallControlApplicationOutbound.html">TelnyxAPI.Model.CallControlApplicationOutbound</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallControlApplicationResponse.html">TelnyxAPI.Model.CallControlApplicationResponse</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallControlCommandResponse.html">TelnyxAPI.Model.CallControlCommandResponse</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallControlCommandResult.html">TelnyxAPI.Model.CallControlCommandResult</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallDtmfReceived.html">TelnyxAPI.Model.CallDtmfReceived</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallDtmfReceivedEvent.html">TelnyxAPI.Model.CallDtmfReceivedEvent</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallDtmfReceivedPayload.html">TelnyxAPI.Model.CallDtmfReceivedPayload</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallEnqueued.html">TelnyxAPI.Model.CallEnqueued</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallEnqueuedEvent.html">TelnyxAPI.Model.CallEnqueuedEvent</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallEnqueuedPayload.html">TelnyxAPI.Model.CallEnqueuedPayload</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallEvent.html">TelnyxAPI.Model.CallEvent</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallForkStarted.html">TelnyxAPI.Model.CallForkStarted</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallForkStartedEvent.html">TelnyxAPI.Model.CallForkStartedEvent</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallForkStartedPayload.html">TelnyxAPI.Model.CallForkStartedPayload</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallForkStopped.html">TelnyxAPI.Model.CallForkStopped</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallForkStoppedEvent.html">TelnyxAPI.Model.CallForkStoppedEvent</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallGatherEnded.html">TelnyxAPI.Model.CallGatherEnded</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallGatherEndedEvent.html">TelnyxAPI.Model.CallGatherEndedEvent</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallGatherEndedPayload.html">TelnyxAPI.Model.CallGatherEndedPayload</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallHangup.html">TelnyxAPI.Model.CallHangup</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallHangupEvent.html">TelnyxAPI.Model.CallHangupEvent</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallHangupPayload.html">TelnyxAPI.Model.CallHangupPayload</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallInitiated.html">TelnyxAPI.Model.CallInitiated</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallInitiatedEvent.html">TelnyxAPI.Model.CallInitiatedEvent</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallInitiatedPayload.html">TelnyxAPI.Model.CallInitiatedPayload</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallLeftQueue.html">TelnyxAPI.Model.CallLeftQueue</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallLeftQueueEvent.html">TelnyxAPI.Model.CallLeftQueueEvent</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallLeftQueuePayload.html">TelnyxAPI.Model.CallLeftQueuePayload</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallMachineDetectionEnded.html">TelnyxAPI.Model.CallMachineDetectionEnded</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallMachineDetectionEndedEvent.html">TelnyxAPI.Model.CallMachineDetectionEndedEvent</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallMachineDetectionEndedPayload.html">TelnyxAPI.Model.CallMachineDetectionEndedPayload</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallMachineGreetingEnded.html">TelnyxAPI.Model.CallMachineGreetingEnded</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallMachineGreetingEndedEvent.html">TelnyxAPI.Model.CallMachineGreetingEndedEvent</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallMachineGreetingEndedPayload.html">TelnyxAPI.Model.CallMachineGreetingEndedPayload</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallPlaybackEnded.html">TelnyxAPI.Model.CallPlaybackEnded</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallPlaybackEndedEvent.html">TelnyxAPI.Model.CallPlaybackEndedEvent</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallPlaybackEndedPayload.html">TelnyxAPI.Model.CallPlaybackEndedPayload</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallPlaybackStarted.html">TelnyxAPI.Model.CallPlaybackStarted</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallPlaybackStartedEvent.html">TelnyxAPI.Model.CallPlaybackStartedEvent</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallPlaybackStartedPayload.html">TelnyxAPI.Model.CallPlaybackStartedPayload</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallRecordingSaved.html">TelnyxAPI.Model.CallRecordingSaved</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallRecordingSavedEvent.html">TelnyxAPI.Model.CallRecordingSavedEvent</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallRecordingSavedPayload.html">TelnyxAPI.Model.CallRecordingSavedPayload</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallRecordingSavedPayloadPublicRecordingUrls.html">TelnyxAPI.Model.CallRecordingSavedPayloadPublicRecordingUrls</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Recording URLs in requested format. The URL is valid for as long as the file exists. For security purposes, this feature is activated on a per request basis.  Please contact customer support with your Account ID to request activation.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallRecordingSavedPayloadRecordingUrls.html">TelnyxAPI.Model.CallRecordingSavedPayloadRecordingUrls</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Recording URLs in requested format. These URLs are valid for 10 minutes. After 10 minutes, you may retrieve recordings via API using Reports -&gt; Call Recordings documentation, or via Mission Control under Reporting -&gt; Recordings.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallReferCompleted.html">TelnyxAPI.Model.CallReferCompleted</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallReferCompletedEvent.html">TelnyxAPI.Model.CallReferCompletedEvent</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallReferCompletedPayload.html">TelnyxAPI.Model.CallReferCompletedPayload</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallReferFailed.html">TelnyxAPI.Model.CallReferFailed</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallReferFailedEvent.html">TelnyxAPI.Model.CallReferFailedEvent</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallReferFailedPayload.html">TelnyxAPI.Model.CallReferFailedPayload</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallReferStarted.html">TelnyxAPI.Model.CallReferStarted</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallReferStartedEvent.html">TelnyxAPI.Model.CallReferStartedEvent</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallReferStartedPayload.html">TelnyxAPI.Model.CallReferStartedPayload</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallRequest.html">TelnyxAPI.Model.CallRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallSpeakEnded.html">TelnyxAPI.Model.CallSpeakEnded</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallSpeakEndedEvent.html">TelnyxAPI.Model.CallSpeakEndedEvent</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallSpeakEndedPayload.html">TelnyxAPI.Model.CallSpeakEndedPayload</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallSpeakStarted.html">TelnyxAPI.Model.CallSpeakStarted</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallSpeakStartedEvent.html">TelnyxAPI.Model.CallSpeakStartedEvent</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CallSpeakStartedPayload.html">TelnyxAPI.Model.CallSpeakStartedPayload</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ClientStateUpdateRequest.html">TelnyxAPI.Model.ClientStateUpdateRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.Conference.html">TelnyxAPI.Model.Conference</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceCallRequest.html">TelnyxAPI.Model.ConferenceCallRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceCommandResponse.html">TelnyxAPI.Model.ConferenceCommandResponse</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceCommandResult.html">TelnyxAPI.Model.ConferenceCommandResult</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceCreated.html">TelnyxAPI.Model.ConferenceCreated</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceCreatedEvent.html">TelnyxAPI.Model.ConferenceCreatedEvent</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceCreatedPayload.html">TelnyxAPI.Model.ConferenceCreatedPayload</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceEnded.html">TelnyxAPI.Model.ConferenceEnded</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceEndedBy.html">TelnyxAPI.Model.ConferenceEndedBy</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>IDs related to who ended the conference. It is expected for them to all be there or all be null</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceEndedEvent.html">TelnyxAPI.Model.ConferenceEndedEvent</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceEndedPayload.html">TelnyxAPI.Model.ConferenceEndedPayload</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceFloorChangedEvent.html">TelnyxAPI.Model.ConferenceFloorChangedEvent</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceFloorChangedEventPayload.html">TelnyxAPI.Model.ConferenceFloorChangedEventPayload</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceHoldRequest.html">TelnyxAPI.Model.ConferenceHoldRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceMuteRequest.html">TelnyxAPI.Model.ConferenceMuteRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceParticipantJoined.html">TelnyxAPI.Model.ConferenceParticipantJoined</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceParticipantJoinedEvent.html">TelnyxAPI.Model.ConferenceParticipantJoinedEvent</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceParticipantJoinedPayload.html">TelnyxAPI.Model.ConferenceParticipantJoinedPayload</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceParticipantLeft.html">TelnyxAPI.Model.ConferenceParticipantLeft</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceParticipantLeftEvent.html">TelnyxAPI.Model.ConferenceParticipantLeftEvent</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceParticipantPlaybackEnded.html">TelnyxAPI.Model.ConferenceParticipantPlaybackEnded</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceParticipantPlaybackEndedEvent.html">TelnyxAPI.Model.ConferenceParticipantPlaybackEndedEvent</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceParticipantPlaybackStarted.html">TelnyxAPI.Model.ConferenceParticipantPlaybackStarted</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceParticipantPlaybackStartedEvent.html">TelnyxAPI.Model.ConferenceParticipantPlaybackStartedEvent</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceParticipantPlaybackStartedPayload.html">TelnyxAPI.Model.ConferenceParticipantPlaybackStartedPayload</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceParticipantSpeakEnded.html">TelnyxAPI.Model.ConferenceParticipantSpeakEnded</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceParticipantSpeakEndedEvent.html">TelnyxAPI.Model.ConferenceParticipantSpeakEndedEvent</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceParticipantSpeakStarted.html">TelnyxAPI.Model.ConferenceParticipantSpeakStarted</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceParticipantSpeakStartedEvent.html">TelnyxAPI.Model.ConferenceParticipantSpeakStartedEvent</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceParticipantSpeakStartedPayload.html">TelnyxAPI.Model.ConferenceParticipantSpeakStartedPayload</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferencePlayRequest.html">TelnyxAPI.Model.ConferencePlayRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferencePlaybackEnded.html">TelnyxAPI.Model.ConferencePlaybackEnded</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferencePlaybackEndedEvent.html">TelnyxAPI.Model.ConferencePlaybackEndedEvent</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferencePlaybackStarted.html">TelnyxAPI.Model.ConferencePlaybackStarted</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferencePlaybackStartedEvent.html">TelnyxAPI.Model.ConferencePlaybackStartedEvent</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferencePlaybackStartedPayload.html">TelnyxAPI.Model.ConferencePlaybackStartedPayload</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceRecordingSaved.html">TelnyxAPI.Model.ConferenceRecordingSaved</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceRecordingSavedEvent.html">TelnyxAPI.Model.ConferenceRecordingSavedEvent</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceRecordingSavedPayload.html">TelnyxAPI.Model.ConferenceRecordingSavedPayload</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceResponse.html">TelnyxAPI.Model.ConferenceResponse</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceSpeakEnded.html">TelnyxAPI.Model.ConferenceSpeakEnded</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceSpeakEndedEvent.html">TelnyxAPI.Model.ConferenceSpeakEndedEvent</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceSpeakRequest.html">TelnyxAPI.Model.ConferenceSpeakRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceSpeakStarted.html">TelnyxAPI.Model.ConferenceSpeakStarted</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceSpeakStartedEvent.html">TelnyxAPI.Model.ConferenceSpeakStartedEvent</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceSpeakStartedPayload.html">TelnyxAPI.Model.ConferenceSpeakStartedPayload</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceStopRequest.html">TelnyxAPI.Model.ConferenceStopRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceUnholdRequest.html">TelnyxAPI.Model.ConferenceUnholdRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ConferenceUnmuteRequest.html">TelnyxAPI.Model.ConferenceUnmuteRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CreateCallControlApplicationRequest.html">TelnyxAPI.Model.CreateCallControlApplicationRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CreateConferenceRequest.html">TelnyxAPI.Model.CreateConferenceRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.CustomSipHeader.html">TelnyxAPI.Model.CustomSipHeader</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.EnqueueRequest.html">TelnyxAPI.Model.EnqueueRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.Error.html">TelnyxAPI.Model.Error</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ErrorSource.html">TelnyxAPI.Model.ErrorSource</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.Errors.html">TelnyxAPI.Model.Errors</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.GatherUsingAudioRequest.html">TelnyxAPI.Model.GatherUsingAudioRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.GatherUsingSpeakRequest.html">TelnyxAPI.Model.GatherUsingSpeakRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.GetRecordingResponse.html">TelnyxAPI.Model.GetRecordingResponse</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.HangupRequest.html">TelnyxAPI.Model.HangupRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.JoinConferenceRequest.html">TelnyxAPI.Model.JoinConferenceRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.LeaveConferenceRequest.html">TelnyxAPI.Model.LeaveConferenceRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.LeaveQueueRequest.html">TelnyxAPI.Model.LeaveQueueRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ListCallControlApplicationsResponse.html">TelnyxAPI.Model.ListCallControlApplicationsResponse</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ListCallEventsResponse.html">TelnyxAPI.Model.ListCallEventsResponse</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ListConferencesResponse.html">TelnyxAPI.Model.ListConferencesResponse</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ListParticipantsResponse.html">TelnyxAPI.Model.ListParticipantsResponse</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ListQueueCallsResponse.html">TelnyxAPI.Model.ListQueueCallsResponse</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ListRecordingsResponse.html">TelnyxAPI.Model.ListRecordingsResponse</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.Loopcount.html">TelnyxAPI.Model.Loopcount</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.PaginationMeta.html">TelnyxAPI.Model.PaginationMeta</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.Participant.html">TelnyxAPI.Model.Participant</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ParticipantConference.html">TelnyxAPI.Model.ParticipantConference</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Info about the conference that the participant is in</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.PauseRecordingRequest.html">TelnyxAPI.Model.PauseRecordingRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.PlayAudioUrlRequest.html">TelnyxAPI.Model.PlayAudioUrlRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.PlaybackStopRequest.html">TelnyxAPI.Model.PlaybackStopRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.Queue.html">TelnyxAPI.Model.Queue</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.QueueCall.html">TelnyxAPI.Model.QueueCall</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.QueueCallResponse.html">TelnyxAPI.Model.QueueCallResponse</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.QueueResponse.html">TelnyxAPI.Model.QueueResponse</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.Recording.html">TelnyxAPI.Model.Recording</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.RecordingDownloadUrls.html">TelnyxAPI.Model.RecordingDownloadUrls</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>The links to download the recording files</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ReferRequest.html">TelnyxAPI.Model.ReferRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.RejectRequest.html">TelnyxAPI.Model.RejectRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.ResumeRecordingRequest.html">TelnyxAPI.Model.ResumeRecordingRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.RetrieveCallStatusResponse.html">TelnyxAPI.Model.RetrieveCallStatusResponse</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.SendDtmfRequest.html">TelnyxAPI.Model.SendDtmfRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.SpeakRequest.html">TelnyxAPI.Model.SpeakRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.StartForkingRequest.html">TelnyxAPI.Model.StartForkingRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.StartRecordingRequest.html">TelnyxAPI.Model.StartRecordingRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.StopForkingRequest.html">TelnyxAPI.Model.StopForkingRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.StopGatherRequest.html">TelnyxAPI.Model.StopGatherRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.StopRecordingRequest.html">TelnyxAPI.Model.StopRecordingRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.Transcription.html">TelnyxAPI.Model.Transcription</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.TranscriptionEvent.html">TelnyxAPI.Model.TranscriptionEvent</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.TranscriptionPayload.html">TelnyxAPI.Model.TranscriptionPayload</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.TranscriptionPayloadTranscriptionData.html">TelnyxAPI.Model.TranscriptionPayloadTranscriptionData</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.TranscriptionStartRequest.html">TelnyxAPI.Model.TranscriptionStartRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.TranscriptionStopRequest.html">TelnyxAPI.Model.TranscriptionStopRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.TransferCallRequest.html">TelnyxAPI.Model.TransferCallRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.TransferCallRequestAnsweringMachineDetectionConfig.html">TelnyxAPI.Model.TransferCallRequestAnsweringMachineDetectionConfig</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Optional configuration parameters to modify 'answering_machine_detection' performance.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.UpdateCallControlApplicationRequest.html">TelnyxAPI.Model.UpdateCallControlApplicationRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.Model.UpdateConferenceRequest.html">TelnyxAPI.Model.UpdateConferenceRequest</a>
+
+  </div>
+
+    <div class="summary-synopsis"></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="TelnyxAPI.RequestBuilder.html">TelnyxAPI.RequestBuilder</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Helper functions for building Tesla requests</p></div>
+
+</div>
+
+    </div>
+  </section>
+
+
+<div class="bottom-actions">
+  <div class="bottom-actions-item">
+
+  </div>
+  <div class="bottom-actions-item">
+
+  </div>
+</div>
+
+      <footer class="footer">
+
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.25.5) for the
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank">Elixir programming language</a>.
+          </span>
+          <span class="line">
+            Designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+
+            <a href="api-reference.html" title="API reference" class="line footer-button">API Reference</a>
+
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>
