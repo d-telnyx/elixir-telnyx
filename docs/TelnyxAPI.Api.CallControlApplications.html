@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="ExDoc v0.25.5">
+    <meta name="project" content="telnyx_api v0.1.0">
+
+    <title>TelnyxAPI.Api.CallControlApplications — telnyx_api v0.1.0</title>
+    <link rel="stylesheet" href="dist/elixir-d1506dba1db7cdc5483e.css" />
+
+    <script src="dist/sidebar_items-e70b63a55a.js"></script>
+
+      <script src="docs_config.js"></script>
+
+    <script async src="dist/app-7b632b26f13d5e0d20e1.js"></script>
+
+
+  </head>
+  <body data-type="modules">
+    <script>
+
+      try {
+        if (localStorage.getItem('night-mode') === 'true') {
+          document.body.classList.add('night-mode');
+        }
+      } catch (error) { }
+    </script>
+
+<div class="main">
+
+<button class="sidebar-button sidebar-toggle">
+  <span class="icon-menu" title="Collapse/expand sidebar"></span>
+</button>
+
+<section class="sidebar">
+  <form class="sidebar-search" action="search.html">
+    <button type="submit" class="search-button" aria-label="Submit Search">
+      <span class="icon-search" aria-hidden="true" title="Submit search"></span>
+    </button>
+    <button type="button" tabindex="-1" class="search-close-button" aria-label="Cancel Search">
+      <span class="icon-cross" aria-hidden="true" title="Cancel search"></span>
+    </button>
+    <label class="search-label">
+      <input name="q" type="text" class="search-input" placeholder="Search..." aria-label="Input your search terms" autocomplete="off" />
+    </label>
+  </form>
+
+  <div class="autocomplete">
+    <div class="autocomplete-results">
+    </div>
+  </div>
+
+  <div class="sidebar-header">
+    <div class="sidebar-projectDetails">
+      <a href="telnyx_api.html" class="sidebar-projectName">
+telnyx_api
+      </a>
+      <strong class="sidebar-projectVersion">
+        v0.1.0
+      </strong>
+    </div>
+
+      <a href="telnyx_api.html">
+        <img src="assets/logo.png" alt="telnyx_api" class="sidebar-projectImage">
+      </a>
+
+  </div>
+
+  <ul class="sidebar-listNav">
+    <li><a id="extras-list-link" href="#full-list">Pages</a></li>
+
+      <li><a id="modules-list-link" href="#full-list">Modules</a></li>
+
+
+  </ul>
+  <div class="gradient"></div>
+  <ul id="full-list" class="sidebar-fullList"></ul>
+</section>
+
+<section class="content">
+  <div class="content-outer">
+    <div id="content" class="content-inner">
+
+      <h1>
+TelnyxAPI.Api.CallControlApplications <small class="app-vsn">(telnyx_api v0.1.0)</small>
+
+          <a href="https://github.com/d-telnyx/elixir-telnyx/blob/master/lib/telnyx_api/api/call_control_applications.ex#L5" title="View Source" class="view-source" rel="help">
+            <span class="icon-code" aria-hidden="true"></span>
+            <span class="sr-only">View Source</span>
+          </a>
+
+      </h1>
+
+
+        <section id="moduledoc">
+<p>API calls for all endpoints tagged <code class="inline">CallControlApplications</code>.</p>
+        </section>
+
+
+        <section id="summary" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#summary">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+            Summary
+          </h1>
+
+  <div class="summary-functions summary">
+    <h2>
+      <a href="#functions">Functions</a>
+    </h2>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#create_call_control_application/3">create_call_control_application(connection, create_call_control_application_request, opts \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Create a call control application
+Create a call control application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#delete_call_control_application/3">delete_call_control_application(connection, id, opts \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Delete a call control application
+Deletes a call control application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#list_call_control_applications/2">list_call_control_applications(connection, opts \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>List call control applications
+Return a list of call control applications.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#retrieve_call_control_application/3">retrieve_call_control_application(connection, id, opts \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Retrieve a call control application
+Retrieves the details of an existing call control application.</p></div>
+
+</div>
+<div class="summary-row">
+  <div class="summary-signature">
+    <a href="#update_call_control_application/4">update_call_control_application(connection, id, update_call_control_application_request, opts \\ [])</a>
+
+  </div>
+
+    <div class="summary-synopsis"><p>Update a call control application
+Updates settings of an existing call control application.</p></div>
+
+</div>
+
+  </div>
+
+        </section>
+
+
+        <section id="functions" class="details-list">
+          <h1 class="section-heading">
+            <a class="hover-link" href="#functions">
+              <span class="icon-link" aria-hidden="true"></span>
+              <span class="sr-only">Link to this section</span>
+            </a>
+Functions
+          </h1>
+          <div class="functions-list">
+<section class="detail" id="create_call_control_application/3">
+
+    <span id="create_call_control_application/2"></span>
+
+  <div class="detail-header">
+    <a href="#create_call_control_application/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">create_call_control_application(connection, create_call_control_application_request, opts \\ [])</h1>
+
+      <a href="https://github.com/d-telnyx/elixir-telnyx/blob/master/lib/telnyx_api/api/call_control_applications.ex#L29" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>create_call_control_application(
+  Tesla.Env.client(),
+  <a href="TelnyxAPI.Model.CreateCallControlApplicationRequest.html#t:t/0">TelnyxAPI.Model.CreateCallControlApplicationRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.CallControlApplicationResponse.html#t:t/0">TelnyxAPI.Model.CallControlApplicationResponse.t</a>()}
+  | {:error, Tesla.Env.t()}</pre>
+
+      </div>
+
+<p>Create a call control application
+Create a call control application.</p><h2 id="create_call_control_application/3-parameters" class="section-heading">
+  <a href="#create_call_control_application/3-parameters" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>create_call_control_application_request (CreateCallControlApplicationRequest): Create call control application request.</li><li>opts (KeywordList): [optional] Optional parameters<h2 id="create_call_control_application/3-returns" class="section-heading">
+  <a href="#create_call_control_application/3-returns" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Returns
+</h2>
+</li></ul><p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="delete_call_control_application/3">
+
+    <span id="delete_call_control_application/2"></span>
+
+  <div class="detail-header">
+    <a href="#delete_call_control_application/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">delete_call_control_application(connection, id, opts \\ [])</h1>
+
+      <a href="https://github.com/d-telnyx/elixir-telnyx/blob/master/lib/telnyx_api/api/call_control_applications.ex#L57" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>delete_call_control_application(Tesla.Env.client(), String.t(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.CallControlApplicationResponse.html#t:t/0">TelnyxAPI.Model.CallControlApplicationResponse.t</a>()}
+  | {:error, Tesla.Env.t()}</pre>
+
+      </div>
+
+<p>Delete a call control application
+Deletes a call control application.</p><h2 id="delete_call_control_application/3-parameters" class="section-heading">
+  <a href="#delete_call_control_application/3-parameters" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Identifies the resource.</li><li>opts (KeywordList): [optional] Optional parameters<h2 id="delete_call_control_application/3-returns" class="section-heading">
+  <a href="#delete_call_control_application/3-returns" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Returns
+</h2>
+</li></ul><p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="list_call_control_applications/2">
+
+    <span id="list_call_control_applications/1"></span>
+
+  <div class="detail-header">
+    <a href="#list_call_control_applications/2" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">list_call_control_applications(connection, opts \\ [])</h1>
+
+      <a href="https://github.com/d-telnyx/elixir-telnyx/blob/master/lib/telnyx_api/api/call_control_applications.ex#L90" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>list_call_control_applications(Tesla.Env.client(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, <a href="TelnyxAPI.Model.ListCallControlApplicationsResponse.html#t:t/0">TelnyxAPI.Model.ListCallControlApplicationsResponse.t</a>()}
+  | {:ok, nil}
+  | {:error, Tesla.Env.t()}</pre>
+
+      </div>
+
+<p>List call control applications
+Return a list of call control applications.</p><h2 id="list_call_control_applications/2-parameters" class="section-heading">
+  <a href="#list_call_control_applications/2-parameters" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>opts (KeywordList): [optional] Optional parameters<ul><li>:page_left_square_bracketnumber_right_square_bracket (integer()): The page number to load</li><li>:page_left_square_bracketsize_right_square_bracket (integer()): The size of the page</li><li>:filter_left_square_bracketapplication_name_right_square_bracket_left_square_bracketcontains_right_square_bracket (String.t): If present, applications with &lt;code&gt;application_name&lt;/code&gt; containing the given value will be returned. Matching is not case-sensitive. Requires at least three characters.</li><li>:filter_left_square_bracketoutbound_periodoutbound_voice_profile_id_right_square_bracket (String.t): Identifies the associated outbound voice profile.</li><li>:sort (String.t): Specifies the sort order for results. By default sorting direction is ascending. To have the results sorted in descending order add the &lt;code&gt; -&lt;/code&gt; prefix.&lt;br/&gt;&lt;br/&gt; That is: &lt;ul&gt;   &lt;li&gt;     &lt;code&gt;connection_name&lt;/code&gt;: sorts the result by the     &lt;code&gt;connection_name&lt;/code&gt; field in ascending order.   &lt;/li&gt;    &lt;li&gt;     &lt;code&gt;-connection_name&lt;/code&gt;: sorts the result by the     &lt;code&gt;connection_name&lt;/code&gt; field in descending order.   &lt;/li&gt; &lt;/ul&gt; &lt;br/&gt; If not given, results are sorted by &lt;code&gt;created_at&lt;/code&gt; in descending order.<h2 id="list_call_control_applications/2-returns" class="section-heading">
+  <a href="#list_call_control_applications/2-returns" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Returns
+</h2>
+</li></ul></li></ul><p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="retrieve_call_control_application/3">
+
+    <span id="retrieve_call_control_application/2"></span>
+
+  <div class="detail-header">
+    <a href="#retrieve_call_control_application/3" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">retrieve_call_control_application(connection, id, opts \\ [])</h1>
+
+      <a href="https://github.com/d-telnyx/elixir-telnyx/blob/master/lib/telnyx_api/api/call_control_applications.ex#L127" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>retrieve_call_control_application(Tesla.Env.client(), String.t(), <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.CallControlApplicationResponse.html#t:t/0">TelnyxAPI.Model.CallControlApplicationResponse.t</a>()}
+  | {:error, Tesla.Env.t()}</pre>
+
+      </div>
+
+<p>Retrieve a call control application
+Retrieves the details of an existing call control application.</p><h2 id="retrieve_call_control_application/3-parameters" class="section-heading">
+  <a href="#retrieve_call_control_application/3-parameters" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Identifies the resource.</li><li>opts (KeywordList): [optional] Optional parameters<h2 id="retrieve_call_control_application/3-returns" class="section-heading">
+  <a href="#retrieve_call_control_application/3-returns" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Returns
+</h2>
+</li></ul><p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+<section class="detail" id="update_call_control_application/4">
+
+    <span id="update_call_control_application/3"></span>
+
+  <div class="detail-header">
+    <a href="#update_call_control_application/4" class="detail-link" title="Link to this function">
+      <span class="icon-link" aria-hidden="true"></span>
+      <span class="sr-only">Link to this function</span>
+    </a>
+    <h1 class="signature">update_call_control_application(connection, id, update_call_control_application_request, opts \\ [])</h1>
+
+      <a href="https://github.com/d-telnyx/elixir-telnyx/blob/master/lib/telnyx_api/api/call_control_applications.ex#L157" class="view-source" rel="help" title="View Source">
+       <span class="icon-code" aria-hidden="true"></span>
+       <span class="sr-only">View Source</span>
+     </a>
+
+
+  </div>
+
+  <section class="docstring">
+
+      <h2>Specs</h2>
+      <div class="specs">
+
+          <pre>update_call_control_application(
+  Tesla.Env.client(),
+  String.t(),
+  <a href="TelnyxAPI.Model.UpdateCallControlApplicationRequest.html#t:t/0">TelnyxAPI.Model.UpdateCallControlApplicationRequest.t</a>(),
+  <a href="https://hexdocs.pm/elixir/typespecs.html#built-in-types">keyword</a>()
+) ::
+  {:ok, nil}
+  | {:ok, <a href="TelnyxAPI.Model.CallControlApplicationResponse.html#t:t/0">TelnyxAPI.Model.CallControlApplicationResponse.t</a>()}
+  | {:error, Tesla.Env.t()}</pre>
+
+      </div>
+
+<p>Update a call control application
+Updates settings of an existing call control application.</p><h2 id="update_call_control_application/4-parameters" class="section-heading">
+  <a href="#update_call_control_application/4-parameters" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Parameters
+</h2>
+<ul><li>connection (TelnyxAPI.Connection): Connection to server</li><li>id (String.t): Identifies the resource.</li><li>update_call_control_application_request (UpdateCallControlApplicationRequest): Update call control application request.</li><li>opts (KeywordList): [optional] Optional parameters<h2 id="update_call_control_application/4-returns" class="section-heading">
+  <a href="#update_call_control_application/4-returns" class="hover-link"><span class="icon-link" aria-hidden="true"></span></a>
+  Returns
+</h2>
+</li></ul><p> on success
+{:error, Tesla.Env.t} on failure</p>
+  </section>
+</section>
+
+          </div>
+        </section>
+
+      <footer class="footer">
+
+        <p>
+          <span class="line">
+            Built using
+            <a href="https://github.com/elixir-lang/ex_doc" title="ExDoc" target="_blank" rel="help noopener">ExDoc</a> (v0.25.5) for the
+            <a href="https://elixir-lang.org" title="Elixir" target="_blank">Elixir programming language</a>.
+          </span>
+          <span class="line">
+            Designed by
+            <a href="https://twitter.com/dignifiedquire" target="_blank" rel="noopener" title="@dignifiedquire">Friedel Ziegelmayer</a>.
+          </span>
+        </p>
+        <p>
+
+            <a href="api-reference.html" title="API reference" class="line footer-button">API Reference</a>
+
+          <button class="line footer-button display-shortcuts-help">
+            Display keyboard shortcuts
+          </button>
+          <button class="line footer-button night-mode-toggle">
+            Toggle night mode
+          </button>
+          <button class="line footer-button display-quick-switch">
+            Go to a HexDocs package
+          </button>
+          <button class="line footer-button tooltips-toggle">
+            <span class="tooltips-option-disable">Disable tooltips</span>
+            <span class="tooltips-option-enable">Enable tooltips</span>
+          </button>
+        </p>
+      </footer>
+    </div>
+  </div>
+</section>
+</div>
+
+
+  </body>
+</html>
