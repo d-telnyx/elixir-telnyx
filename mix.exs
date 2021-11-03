@@ -7,6 +7,8 @@ defmodule TelnyxAPI.Mixfile do
      elixir: "~> 1.6",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
+     package: package(),
+     description: "SIP trunking, SMS, MMS, Call Control and Telephony Data Services.",
      deps: deps()]
   end
 
@@ -31,6 +33,14 @@ defmodule TelnyxAPI.Mixfile do
     [
       {:tesla, "~> 1.2"},
       {:poison, "~> 3.0"}
+    ]
+  end
+
+   defp package() do
+    [
+      name: "telnyx_api",
+      files: ~w(lib mix.exs README* LICENSE*),
+      licenses: [""]
     ]
   end
 end
